@@ -1,0 +1,159 @@
+************* Kun.uz yangiliklar sayti *************
+
+***** Entity
+1. Profile
+2. UserRole
+3. Article
+4. Comment
+        id,content,articleId,Profileid,CreatedDate
+5. Like
+6. ArticleType (sport,siyosat,zahon,...)
+7. Region (Toshkent,Xorazm, Buxoro, Jizzax)
+
+
+
+**** Functionality
+
+1. Profile
+    1. Registration with email verification
+    2. Authorization
+    3. Update Profile (name,surname,login, password)
+    4. Update Profile (email) with email sending verification
+        ** ADMIN **
+    5. Create Profil
+    6. Update Profile
+    7. Delete Profile
+    8. Get Profile List
+    9. Get Profile By id
+
+2. Article
+    1. get todays article list
+    2. get article list by region
+    3. get article list by profile
+    4. get article by type
+        ** Moderator **
+    5. Create Article
+    6. Update Article
+        ** Publisher/Moderator
+    7. Delete Article
+        ** All with token **
+    8. Get Article by id
+    9. Get Article List
+
+3. Region
+    1. Create Region
+    2. Update Region
+    3. Delete Region
+    4. Get by id
+    5. Get Region list
+
+
+
+
+
+
+
+    3. Region
+            ** Admin **
+        1. Create Region
+        2. Update Region
+        3. Delete Region
+            ** All **
+        4. Get by id
+        5. Get Region list
+
+    4. Comment
+            ** Only authorized **
+        1. Create
+        3. Get by id
+            ** Authorized and owner **
+        2. Update
+        4. Delete
+            ** All **
+        5. Get Profile Comment list
+        6. Get Article Comment list (pagination)
+            ** Admin **
+        7. Get all comment list (with pagination)
+
+
+
+
+
+
+
+
+1. Sistemadan har bir ketgan email larni bazaga yozish kerak.
+2. Bitta odam bitta Article yoki Comment ga bitta like yoki dislike qo'ya oladi.
+
+
+. EmailHistory
+    id, from_account,to_account,created_date,status(used, not used),used_date
+
+. MailHistory
+        ** Admin **
+    1. Get all send email (pagination)
+    2. Get today send email
+    3. Get last send email
+    4. Get not used send email (pagination)
+
+
+. Like
+    id,articleId,ProfileId,createdDate,status(like,dislike)
+
+ Like
+        ** Authorized **
+    1. Create like/dislike
+    2. Delete like/dislike
+    3. Update like/dislike
+        ** All **
+    4. Get article like and dislike count
+    5. Get comment like and dislike count
+        ** Authorized **
+    6. Get profile liked article list
+    7. Get profile liked comment list
+
+
+
+
+
+     2. Comment filter: commentId, profileId, articleId, createdDate (fromDate, toDate),
+            Pagination, orderByFiled [asc,desc]
+        3. Profile Filter: name,surname,email,role,status,profileId, CreatedDate(formDate, toDate)
+            Pagination, OrderByField [asc,desc]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. Filter with specification
+    1. Article filter: articleId, profileId, status, createdDate (fromDate, toDate),
+            Pagination, orderByFiled [asc,desc]
+    2. Comment filter: commentId, profileId, articleId, createdDate (fromDate, toDate),
+            Pagination, orderByFiled [asc,desc]
+    3. Profile Filter: name,surname,email,role,status,profileId, CreatedDate(formDate, toDate)
+            Pagination, OrderByField [asc,desc]
+10. Validation using javax
+       ** Profile **
+           1. Registration with email verification
+           ** Profile **
+           1. Update Profile (name,surname,login, password)
+           ** ADMIN **
+           1. Create Profile
+           2. Update Profile
+       ** Article **
+           1. Create Article
+           2. Update Article
+       ** Like **
+            1. Create like/dislike
+       ** Comment **
+             1. Create
+             2. Update
