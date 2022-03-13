@@ -55,6 +55,9 @@ public class LikeController {
         return ResponseEntity.ok(articleLikedList);
     }
 
+     public  static void test(){
+         System.out.println("dasdasd");
+     }
     @PutMapping("/action/{id}")
     @ApiOperation(value = "like update method", notes = "like")
     public ResponseEntity<?> update(@PathVariable("id") Integer id,
