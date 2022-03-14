@@ -1,10 +1,7 @@
 package ok.suxrob.controller;
 
-<<<<<<< HEAD
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 import ok.suxrob.dto.CommentDTO;
 import ok.suxrob.dto.ProfileJwtDTO;
 import ok.suxrob.enums.UserRole;
@@ -19,20 +16,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/comment")
-<<<<<<< HEAD
 @Api(tags = "Comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
     @PostMapping("/action")
-<<<<<<< HEAD
     @ApiOperation(value = "comment create method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> create(@RequestBody CommentDTO dto, HttpServletRequest request) {
         ProfileJwtDTO jwtDTO = JwtUtil.getProfile(request);
         CommentDTO response = commentService.create(jwtDTO.getId(), dto);
@@ -40,10 +31,7 @@ public class CommentController {
     }
 
     @GetMapping("/action/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "comment getById method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getById(@PathVariable("id") Integer id, HttpServletRequest request) {
         JwtUtil.getProfile(request);
         CommentDTO dto = commentService.getById(id);
@@ -51,30 +39,21 @@ public class CommentController {
     }
 
     @GetMapping("/profile/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "comment getByProfileId method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getByProfileId(@PathVariable("id") Integer id) {
         List<CommentDTO> dtoList = commentService.getByProfileId(id);
         return ResponseEntity.ok(dtoList);
     }
 
     @GetMapping("/article/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "comment getByArticleId method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getByArticleId(@PathVariable("id") Integer id) {
         List<CommentDTO> dtoList = commentService.getByArticleId(id);
         return ResponseEntity.ok(dtoList);
     }
 
     @GetMapping("/commentByAdmin")
-<<<<<<< HEAD
     @ApiOperation(value = "comment getAll method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getAll(HttpServletRequest request) {
         ProfileJwtDTO jwtDTO = JwtUtil.getProfile(request, UserRole.ADMIN);
         List<CommentDTO> dtoList = commentService.getAll(jwtDTO.getId());
@@ -82,10 +61,7 @@ public class CommentController {
     }
 
     @PutMapping("/action/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "comment update method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody CommentDTO dto, HttpServletRequest request) {
         JwtUtil.getProfile(request);
         boolean result = commentService.update(id, dto);
@@ -93,10 +69,7 @@ public class CommentController {
     }
 
     @DeleteMapping("/action/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "comment delete method", notes = "comment")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> delete(@PathVariable Integer id, HttpServletRequest request) {
         JwtUtil.getProfile(request);
         boolean result = commentService.delete(id);

@@ -27,20 +27,14 @@ public class AuthController {
     }
 
     @PostMapping("/registration")
-<<<<<<< HEAD
     @ApiOperation(value = "registration method", notes = "registration")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> registration(@Valid @RequestBody RegistrationDTO dto) {
         authService.registration(dto);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/verification/{id}")
-<<<<<<< HEAD
     @ApiOperation(value = "verification method", notes = "verification")
-=======
->>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> verification(@PathVariable("id") String  jwt) {
         authService.verification(jwt);
         return ResponseEntity.ok("Your status ACTIVE");
