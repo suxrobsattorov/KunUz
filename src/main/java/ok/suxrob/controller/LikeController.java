@@ -58,6 +58,7 @@ public class LikeController {
      public  static void test(){
          System.out.println("dasdasd");
      }
+     // git pull origin master --allow-unrelated-histories
     @PutMapping("/action/{id}")
     @ApiOperation(value = "like update method", notes = "like")
     public ResponseEntity<?> update(@PathVariable("id") Integer id,
