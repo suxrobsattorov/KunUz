@@ -1,6 +1,9 @@
 package ok.suxrob.controller;
 
+<<<<<<< HEAD
 import io.swagger.annotations.Api;
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 import ok.suxrob.exceptions.BadRequestException;
 import ok.suxrob.exceptions.ForbiddenException;
 import ok.suxrob.exceptions.ItemNotFoundException;
@@ -11,7 +14,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
+<<<<<<< HEAD
 @Api(tags = "Exception")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 public class ExceptionHandlerController {
 
     @ExceptionHandler({ItemNotFoundException.class, BadRequestException.class})

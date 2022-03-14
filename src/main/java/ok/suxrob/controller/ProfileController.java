@@ -1,7 +1,10 @@
 package ok.suxrob.controller;
 
+<<<<<<< HEAD
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 import lombok.Data;
 import ok.suxrob.dto.ArticleDTO;
 import ok.suxrob.dto.ProfileDTO;
@@ -21,13 +24,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/profile")
+<<<<<<< HEAD
 @Api(tags = "Profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
 
     @PostMapping("/action")
+<<<<<<< HEAD
     @ApiOperation(value = "profile create method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> createProfile(@RequestBody ProfileDTO dto, HttpServletRequest request) {
         ProfileJwtDTO jwtDTO = JwtUtil.getProfile(request, UserRole.ADMIN);
         ProfileDTO response = profileService.createProfileAdmin(dto, jwtDTO.getId());
@@ -35,7 +44,10 @@ public class ProfileController {
     }
 
     @PostMapping("/filter")
+<<<<<<< HEAD
     @ApiOperation(value = "profile filter method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> filter(@RequestParam("page") int page,
                                     @RequestParam("size") int size,
                                     @RequestBody ProfileFilterDTO dto) {
@@ -44,7 +56,10 @@ public class ProfileController {
     }
 
     @GetMapping("/action")
+<<<<<<< HEAD
     @ApiOperation(value = "profile getAll method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getAll(HttpServletRequest request) {
         JwtUtil.getProfile(request);
         List<ProfileDTO> dtoList = profileService.getAll();
@@ -52,14 +67,20 @@ public class ProfileController {
     }
 
     @GetMapping("/action/{id}")
+<<<<<<< HEAD
     @ApiOperation(value = "profile getById method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> getById(@PathVariable("id") Integer id) {
         ProfileDTO dto = profileService.getById(id);
         return dto != null ? ResponseEntity.ok(dto) : ResponseEntity.badRequest().body("Profile not found");
     }
 
     @PutMapping("/action/{id}")
+<<<<<<< HEAD
     @ApiOperation(value = "profile update method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> update(@PathVariable("id") Integer userId, @RequestBody ProfileDTO dto,
                                     HttpServletRequest request) {
         JwtUtil.getProfile(request, UserRole.ADMIN);
@@ -68,7 +89,10 @@ public class ProfileController {
     }
 
     @DeleteMapping("/action/{id}")
+<<<<<<< HEAD
     @ApiOperation(value = "profile delete method", notes = "profile")
+=======
+>>>>>>> edf6660ae0d96ffba560949c1fa4ba04cff25f23
     public ResponseEntity<?> delete(@PathVariable("id") Integer userId,
                                     HttpServletRequest request) {
         JwtUtil.getProfile(request, UserRole.ADMIN);
