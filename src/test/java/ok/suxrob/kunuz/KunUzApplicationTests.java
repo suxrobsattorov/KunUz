@@ -2,7 +2,6 @@ package ok.suxrob.kunuz;
 
 import ok.suxrob.dto.ArticleDTO;
 import ok.suxrob.dto.filter.ArticleFilterDTO;
-import ok.suxrob.entity.ArticleEntity;
 import ok.suxrob.entity.ProfileEntity;
 import ok.suxrob.enums.ProfileStatus;
 import ok.suxrob.enums.UserRole;

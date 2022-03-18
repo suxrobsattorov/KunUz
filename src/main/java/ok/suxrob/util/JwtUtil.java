@@ -2,7 +2,6 @@ package ok.suxrob.util;
 
 import io.jsonwebtoken.*;
 import ok.suxrob.dto.ProfileJwtDTO;
-import ok.suxrob.enums.ArticleStatus;
 import ok.suxrob.enums.UserRole;
 import ok.suxrob.exceptions.ForbiddenException;
 import ok.suxrob.exceptions.UnauthorizedException;
